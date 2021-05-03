@@ -23,26 +23,15 @@ class BinaryTree{
     if(node==null) return ;
     
     LinkedList<Node> a = new LinkedList<>();
-    LinkedList<Node> b = new LinkedList<>();
     
     a.push(node);
     
-    while(!a.isEmpty() || !b.isEmpty()){
-      while(!a.isEmpty()){
+    while(!a.isEmpty()){
         Node x = a.poll();
-        System.out.print(x.key + " ");
-        
-        if(x.left!=null) b.push(x.left);
-        if(x.right!=null) b.push(x.right);
-      }
-      
-      while(!b.isEmpty()){
-        Node x = b.poll();
         System.out.print(x.key + " ");
         
         if(x.left!=null) a.push(x.left);
         if(x.right!=null) a.push(x.right);
-      }
     }
     
   }
